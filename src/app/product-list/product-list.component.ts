@@ -11,3 +11,7 @@ export class ProductListComponent {
         this.products = svc.get();
     }
 }
+
+// Pipes
+// Container presentation
+// Dependency Injection
