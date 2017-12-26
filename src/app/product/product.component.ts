@@ -1,4 +1,5 @@
-import { Component,Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-product',
@@ -12,6 +13,7 @@ import { Component,Input } from '@angular/core';
       <input type="checkbox" disabled="true" [checked]="product.inStock" />
   </div>
   <div class="text-muted"> {{product.lastUpdated | date:'MMM-dd-yyyy hh:mm'}}</div>
+  <div class="text-muted">{{product.lastUpdated | time }}</div>
 
   `
 })

@@ -1,12 +1,17 @@
 import { Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
 
 
 @Injectable()
-export class ProductService{
-  get(){
-        return [{ id: 1, brand: "Apple", model: "Iphone 5S", price: 200, inStock: false, lastUpdated: Date.now() },
-        { id: 2, brand: "Apple", model: "Iphone 7S", price: 700, inStock: true, lastUpdated: Date.now() },
-        { id: 3, brand: "Samsung", model: "Galaxy S8", price: 1200, inStock: true, lastUpdated: Date.now() },
-        { id: 4, brand: "Samsung", model: "Galaxy S7", price: 800, inStock: true, lastUpdated: Date.now() }];
+export class ProductService {
+
+    constructor(private http: HttpClient) { }
+
+    get() {
+        return this.http.get("https://express-api.herokuapp.com/api/products");
+    }
+
+    save(product) {
+        return this.http.post("https://express-api.herokuapp.com/api/products", product);
     }
 }

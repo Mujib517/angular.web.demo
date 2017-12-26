@@ -12,7 +12,6 @@ import { HttpClient } from '@angular/common/http';
             <img width="100" height="100" class="img img-circle" [src]="user.avatar_url"/>
         </div>
     </div>
-
     `
 })
 
