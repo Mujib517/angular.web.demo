@@ -12,21 +12,16 @@ import { UsersComponent } from './users/users.component';
 import { TimePipe } from "./shared/time.pipe";
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { RouterModule, Route } from '@angular/router';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
-
-const ROUTES: Route[] = [
-    { path: '', component: HomeComponent },
-    { path: 'about', component: AboutComponent },
-    { path: 'contact', component: ContactComponent },
-    { path: 'products', component: ProductListComponent },
-    { path: '**', component: HomeComponent }];
+import { NewProductComponent } from './new-product/new-product.component';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { RoutingModule } from "./shared/routing.module";
+import { SharedModule } from "./shared/shared.module";
 
 @NgModule({
-    imports: [BrowserModule, FormsModule, HttpClientModule, ReactiveFormsModule, RouterModule.forRoot(ROUTES)],
-    declarations: [AppComponent, HomeComponent, ProductListComponent, ProductComponent, UsersComponent, TimePipe, HeaderComponent, FooterComponent, AboutComponent, ContactComponent],
-    providers: [ProductService],
+    imports: [BrowserModule, FormsModule, HttpClientModule, ReactiveFormsModule, RoutingModule,SharedModule],
+    declarations: [AppComponent, HomeComponent, ProductListComponent, ProductComponent, UsersComponent, HeaderComponent, FooterComponent, AboutComponent, ContactComponent, NewProductComponent, ProductDetailComponent],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

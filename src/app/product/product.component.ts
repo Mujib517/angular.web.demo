@@ -5,7 +5,7 @@ import * as moment from 'moment';
   selector: 'app-product',
   template: `
   
-  <h3>{{product.brand | uppercase}} {{product.model | titlecase}}</h3>
+  <h3><a [routerLink]="'/products/'+product._id"> {{product.brand | uppercase}} {{product.model | titlecase}}</a></h3>
 
   <b>{{product.price | currency}}</b>
   <div>

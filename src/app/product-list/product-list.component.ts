@@ -9,17 +9,8 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 export class ProductListComponent implements OnInit, OnDestroy {
     products: any[];
     obs;
-    product = {};
-    frm: FormGroup;
-    //dependency injection
-    constructor(private svc: ProductService, private fb: FormBuilder) {
-        this.frm = fb.group({
-            brand: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(10)]],
-            model: [''],
-            price: [''],
-            inStock: [true]
-        });
-    }
+  
+    constructor(private svc: ProductService){}
 
     ngOnInit() {
         this.init();
@@ -30,20 +21,7 @@ export class ProductListComponent implements OnInit, OnDestroy {
         this.obs.unsubscribe();
     }
 
-    onSave() {
-        if (this.frm.valid) {
-            this.svc.save(this.product)
-                .subscribe(
-                res => console.log("successfully added"),
-                err => this.init()
-                )
-        }
-        else {
-            console.log(this.frm.controls);
-            console.log("Validations failed");
-        }
-
-    }
+ 
 
     init() {
         this.obs = this.svc.get()
@@ -51,7 +29,6 @@ export class ProductListComponent implements OnInit, OnDestroy {
             data => this.products = data["products"],
             err => console.log(err)
             );
-        this.product = {};
     }
 }
 
