@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from "@angular/core";
 import { ProductService } from '../shared/product.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
     selector: 'app-product-list',
@@ -9,19 +10,20 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 export class ProductListComponent implements OnInit, OnDestroy {
     products: any[];
     obs;
-  
-    constructor(private svc: ProductService){}
+
+    constructor(private svc: ProductService, private activatedRoute: ActivatedRoute) { }
 
     ngOnInit() {
-        this.init();
+        //this.init();
+        this.products = this.activatedRoute.snapshot.data.response.products;
     }
 
     ngOnDestroy() {
         //cleanup logic
-        this.obs.unsubscribe();
+        // this.obs.unsubscribe();
     }
 
- 
+
 
     init() {
         this.obs = this.svc.get()
