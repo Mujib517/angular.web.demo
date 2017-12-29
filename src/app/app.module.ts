@@ -18,10 +18,12 @@ import { NewProductComponent } from './new-product/new-product.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { RoutingModule } from "./shared/routing.module";
 import { SharedModule } from "./shared/shared.module";
+import { SpecsComponent } from './specs/specs.component';
+import { ReviewsComponent } from './reviews/reviews.component';
 
 @NgModule({
     imports: [BrowserModule, FormsModule, HttpClientModule, ReactiveFormsModule, RoutingModule,SharedModule],
-    declarations: [AppComponent, HomeComponent, ProductListComponent, ProductComponent, UsersComponent, HeaderComponent, FooterComponent, AboutComponent, ContactComponent, NewProductComponent, ProductDetailComponent],
+    declarations: [AppComponent, HomeComponent, ProductListComponent, ProductComponent, UsersComponent, HeaderComponent, FooterComponent, AboutComponent, ContactComponent, NewProductComponent, ProductDetailComponent, SpecsComponent, ReviewsComponent],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

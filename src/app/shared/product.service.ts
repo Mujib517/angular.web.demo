@@ -8,13 +8,15 @@ export class ProductService {
 
     private _baseUrl = environment.baseUrl;
 
+    reviews: any[];
+
     constructor(private http: HttpClient) { }
 
     get() {
         return this.http.get(`${this._baseUrl}api/products`);
     }
 
-    getById(id){
+    getById(id) {
         return this.http.get(`${this._baseUrl}api/products/${id}`)
     }
 

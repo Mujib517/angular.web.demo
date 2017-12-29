@@ -22,12 +22,20 @@ import { ActivatedRoute } from '@angular/router';
    </div>
    </div>
 
+   <ul class="nav nav-tabs">
+    <li routerLinkActive="active"><a routerLink="specs">More Specs</a><li>
+    <li routerLinkActive="active"><a routerLink="reviews">Reviews</a><li>
+   </ul>
+
+   <router-outlet></router-outlet>
+
+
   `,
   styles: []
 })
 export class ProductDetailComponent implements OnInit {
 
-  product: any={};
+  product: any = {};
   err: boolean;
 
   constructor(private productSvc: ProductService, private activatedRoute: ActivatedRoute) { }
@@ -38,7 +46,10 @@ export class ProductDetailComponent implements OnInit {
 
     this.productSvc.getById(id)
       .subscribe(
-      res => this.product = res,
+      res => {
+        this.product = res;
+        this.productSvc.reviews = res["reviews"];
+      },
       err => this.err = true
       )
   }
