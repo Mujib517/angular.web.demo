@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import * as moment from 'moment';
+import { ProductService } from '../shared/product.service';
 
 @Component({
   selector: 'app-product',
@@ -15,9 +16,22 @@ import * as moment from 'moment';
   <div class="text-muted"> {{product.lastUpdated | date:'MMM-dd-yyyy hh:mm'}}</div>
   <div class="text-muted">{{product.lastUpdated | time }}</div>
 
+  <button (click)="onDelete(product._id)" class="btn btn-sm btn-danger">Delete</button>
+
+
   `
 })
 export class ProductComponent {
   @Input()
   product: any;
+
+  constructor(private productSvc: ProductService) { }
+
+  onDelete(id) {
+    this.productSvc.delete(id)
+      .subscribe(
+      () => console.log("Deleted!!"),
+      err => console.log(err)
+      )
+  }
 }

@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { ConsoleLogger } from "../shared/console.logger.service";
 
 //ES6 Module
 @Component({
@@ -8,6 +9,12 @@ import { Component } from "@angular/core";
     `
 })
 export class HomeComponent {
+
+    constructor(private logger: ConsoleLogger) { }
+
+    ngOnInit() {
+        this.logger.warn("COmponent took long time to load");
+    }
 }
 
 //Uppercase, lowercase, titlecase, currency, date, async
