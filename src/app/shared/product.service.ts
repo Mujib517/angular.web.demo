@@ -24,7 +24,7 @@ export class ProductService {
         return this.http.post(`${this._baseUrl}api/products`, product);
     }
 
-    delete(id){
+    delete(id) {
         return this.http.delete(`${this._baseUrl}api/products/${id}`);
     }
 }
