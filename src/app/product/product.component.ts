@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import * as moment from 'moment';
 import { ProductService } from '../shared/product.service';
 
@@ -17,20 +17,22 @@ import { ProductService } from '../shared/product.service';
   <div class="text-muted">{{product.lastUpdated | time }}</div>
 
   <button (click)="onDelete(product._id)" class="btn btn-sm btn-danger">Delete</button>
-
-
   `
 })
 export class ProductComponent {
   @Input()
   product: any;
+  @Output()
+  notify: EventEmitter<any>;
 
-  constructor(private productSvc: ProductService) { }
+  constructor(private productSvc: ProductService) {
+    this.notify = new EventEmitter<any>();
+  }
 
   onDelete(id) {
     this.productSvc.delete(id)
       .subscribe(
-      () => console.log("Deleted!!"),
+      () => this.notify.emit({ message: "Message From child" }),
       err => console.log(err)
       )
   }

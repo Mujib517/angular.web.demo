@@ -23,7 +23,11 @@ export class ProductListComponent implements OnInit, OnDestroy {
         // this.obs.unsubscribe();
     }
 
-
+    //child component will call this function
+    onNotify(obj) {
+        console.log(obj);
+        this.init();
+    }
 
     init() {
         this.obs = this.svc.get()

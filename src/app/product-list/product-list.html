@@ -58,6 +58,6 @@
 
 <div class="col-md-7">
     <div class="well" *ngFor="let prd of products">
-        <app-product [product]="prd"></app-product>
+        <app-product [product]="prd" (notify)="onNotify($event)"></app-product>
     </div>
 </div>
