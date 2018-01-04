@@ -20,10 +20,11 @@ import { RoutingModule } from "./shared/routing.module";
 import { SharedModule } from "./shared/shared.module";
 import { SpecsComponent } from './specs/specs.component';
 import { ReviewsComponent } from './reviews/reviews.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
     imports: [BrowserModule, FormsModule, HttpClientModule, ReactiveFormsModule, RoutingModule,SharedModule],
-    declarations: [AppComponent, HomeComponent, ProductListComponent, ProductComponent, UsersComponent, HeaderComponent, FooterComponent, AboutComponent, ContactComponent, NewProductComponent, ProductDetailComponent, SpecsComponent, ReviewsComponent],
+    declarations: [AppComponent, HomeComponent, ProductListComponent, ProductComponent, UsersComponent, HeaderComponent, FooterComponent, AboutComponent, ContactComponent, NewProductComponent, ProductDetailComponent, SpecsComponent, ReviewsComponent, LoginComponent],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
