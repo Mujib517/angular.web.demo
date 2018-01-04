@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../shared/product.service';
 import { ActivatedRoute } from '@angular/router';
+import { Product } from '../shared/models/product.model';
 
 @Component({
   selector: 'app-product-detail',
@@ -35,10 +36,12 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ProductDetailComponent implements OnInit {
 
-  product: any = {};
+  product: Product;
   err: boolean;
 
-  constructor(private productSvc: ProductService, private activatedRoute: ActivatedRoute) { }
+  constructor(private productSvc: ProductService, private activatedRoute: ActivatedRoute) {
+    this.product = new Product();
+  }
 
   ngOnInit() {
 
@@ -47,7 +50,7 @@ export class ProductDetailComponent implements OnInit {
     this.productSvc.getById(id)
       .subscribe(
       res => {
-        this.product = res;
+        this.product = <Product>res;
         this.productSvc.reviews = res["reviews"];
       },
       err => this.err = true

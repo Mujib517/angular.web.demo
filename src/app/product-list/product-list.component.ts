@@ -2,20 +2,34 @@ import { Component, OnInit, OnDestroy } from "@angular/core";
 import { ProductService } from '../shared/product.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute } from "@angular/router";
+import { Product } from "../shared/models/product.model";
 
 @Component({
     selector: 'app-product-list',
     templateUrl: './product-list.html'
 })
 export class ProductListComponent implements OnInit, OnDestroy {
-    products: any[];
+    products: Product[];
     obs;
 
     constructor(private svc: ProductService, private activatedRoute: ActivatedRoute) { }
 
     ngOnInit() {
         //this.init();
-        this.products = this.activatedRoute.snapshot.data.response.products;
+        this.products = this.activatedRoute.snapshot.data.response;
+
+        /*
+            Message
+            {
+                sender:mobile,
+                reciever:mobile,
+                sendDate:Date,
+                recievedDate:Date,
+                read:boolean,
+                readDate:Date,
+                type:text|image|video|file
+            }
+        */
     }
 
     ngOnDestroy() {
