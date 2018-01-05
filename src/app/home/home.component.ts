@@ -5,7 +5,7 @@ import { ConsoleLogger } from "../shared/console.logger.service";
 @Component({
     selector: 'app-home',
     template: ` 
-   <h1>Home Page</h1>
+   <h1 dlBorder>Home Page</h1>
 
    <h1 [dlShow]="show">THis is a heading</h1>
 

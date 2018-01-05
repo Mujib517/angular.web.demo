@@ -9,12 +9,13 @@ import { ProductInterceptor } from "./product.interceptor";
 import { AuthService } from "./auth.service";
 import { ShowDirective } from "./show.directive";
 import { IfDirective } from "./if.directive";
+import { BorderDirective } from "./border.directive";
 
 @NgModule({
-    declarations: [TimePipe, ShowDirective, IfDirective],
+    declarations: [TimePipe, ShowDirective, IfDirective,BorderDirective],
     providers: [ProductService, ProductResolver, AuthService,
         { provide: ConsoleLogger, useClass: FileLogger },
         { provide: HTTP_INTERCEPTORS, useClass: ProductInterceptor, multi: true }],
-    exports: [TimePipe, ShowDirective, IfDirective]
+    exports: [TimePipe, ShowDirective, IfDirective,BorderDirective]
 })
 export class SharedModule { }
