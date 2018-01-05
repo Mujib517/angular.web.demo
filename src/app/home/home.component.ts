@@ -9,11 +9,13 @@ import { ConsoleLogger } from "../shared/console.logger.service";
 
    <h1 [dlShow]="show">THis is a heading</h1>
 
+   <h1 *dlIf="show">If Directive Demo</h1>
+
     `
 })
 export class HomeComponent {
 
-    show:boolean=false;
+    show:boolean=true;
 
     constructor(private logger: ConsoleLogger) { }
 

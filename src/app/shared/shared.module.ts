@@ -8,12 +8,13 @@ import { HTTP_INTERCEPTORS } from "@angular/common/http";
 import { ProductInterceptor } from "./product.interceptor";
 import { AuthService } from "./auth.service";
 import { ShowDirective } from "./show.directive";
+import { IfDirective } from "./if.directive";
 
 @NgModule({
-    declarations: [TimePipe, ShowDirective],
+    declarations: [TimePipe, ShowDirective, IfDirective],
     providers: [ProductService, ProductResolver, AuthService,
         { provide: ConsoleLogger, useClass: FileLogger },
         { provide: HTTP_INTERCEPTORS, useClass: ProductInterceptor, multi: true }],
-    exports: [TimePipe, ShowDirective]
+    exports: [TimePipe, ShowDirective, IfDirective]
 })
 export class SharedModule { }
