@@ -6,9 +6,14 @@ import { ConsoleLogger } from "../shared/console.logger.service";
     selector: 'app-home',
     template: ` 
    <h1>Home Page</h1>
+
+   <h1 [dlShow]="show">THis is a heading</h1>
+
     `
 })
 export class HomeComponent {
+
+    show:boolean=false;
 
     constructor(private logger: ConsoleLogger) { }
 

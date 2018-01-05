@@ -5,6 +5,8 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
 
+//component,attr ngModel, struct *ngIf,*ngFor
+
 @Injectable()
 export class AuthService {
 
