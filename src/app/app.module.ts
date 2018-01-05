@@ -1,29 +1,11 @@
-import { NgModule } from "@angular/core";
-import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { NgModule, BrowserModule, FormsModule, HttpClientModule, ReactiveFormsModule, RoutingModule, SharedModule }
+    from './module.barrel';
 
-import { AppComponent } from "./app.component";
-import { HomeComponent } from "./home/home.component";
-import { ProductListComponent } from "./product-list/product-list.component";
-import { ProductComponent } from './product/product.component';
-import { ProductService } from "./shared/product.service";
-import { UsersComponent } from './users/users.component';
-import { TimePipe } from "./shared/time.pipe";
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
-import { AboutComponent } from './about/about.component';
-import { ContactComponent } from './contact/contact.component';
-import { NewProductComponent } from './new-product/new-product.component';
-import { ProductDetailComponent } from './product-detail/product-detail.component';
-import { RoutingModule } from "./shared/routing.module";
-import { SharedModule } from "./shared/shared.module";
-import { SpecsComponent } from './specs/specs.component';
-import { ReviewsComponent } from './reviews/reviews.component';
-import { LoginComponent } from './login/login.component';
+import { AppComponent, HomeComponent, ProductListComponent, ProductComponent, UsersComponent, HeaderComponent, FooterComponent, AboutComponent, ContactComponent, NewProductComponent, ProductDetailComponent, SpecsComponent, ReviewsComponent, LoginComponent }
+    from './app.barrel';
 
 @NgModule({
-    imports: [BrowserModule, FormsModule, HttpClientModule, ReactiveFormsModule, RoutingModule,SharedModule],
+    imports: [BrowserModule, FormsModule, HttpClientModule, ReactiveFormsModule, RoutingModule, SharedModule],
     declarations: [AppComponent, HomeComponent, ProductListComponent, ProductComponent, UsersComponent, HeaderComponent, FooterComponent, AboutComponent, ContactComponent, NewProductComponent, ProductDetailComponent, SpecsComponent, ReviewsComponent, LoginComponent],
     bootstrap: [AppComponent]
 })
