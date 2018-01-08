@@ -9,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactComponent implements OnInit {
 
+  count: number = 10;
+  counter: number;
+
   constructor() { }
 
   ngOnInit() {
+
+    if (this.count == 11) {
+      this.count = 100;
+    }
+    else {
+      this.count++;
+    }
+
   }
 
 }
