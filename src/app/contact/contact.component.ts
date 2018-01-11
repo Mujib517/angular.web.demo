@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   template: `
     <h1>Contact Page</h1>
 
-    <div infinteScroll infiniteScrollDistance="2" (scrolled)="addMore()">
+    <div infiniteScroll infiniteScrollDistance="2" (scrolled)="addMore()">
         <div   class="well" *ngFor="let val of vals">
           <h3>{{val}}</h3>
         </div>
@@ -35,8 +35,11 @@ export class ContactComponent implements OnInit {
   addMore() {
     console.log("scroll event");
     //webservice call
+    //productSvc.get().subscribe(
+    //   (res)=>this.products.push(res);
+    // )
     for (var i = 0; i < 5; i++) {
-      this.vals.push(Math.random() * 10);
+      this.vals.push(Math.ceil(Math.random()) * 10);
     }
   }
 
