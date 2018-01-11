@@ -26,7 +26,7 @@ import { Router } from '@angular/router';
             <input type="checkbox" name="inStock" formControlName="inStock" />
         </div>
         <div class="form-group">
-            <button (click)="onSave()" class="btn btn-success">Save Product</button>
+            <button [disabled]="frm.invalid" (click)="onSave()" class="btn btn-success">Save Product</button>
         </div>
     </div>
 </form>

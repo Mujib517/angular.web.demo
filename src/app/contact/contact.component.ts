@@ -33,11 +33,6 @@ export class ContactComponent implements OnInit {
   }
 
   addMore() {
-    console.log("scroll event");
-    //webservice call
-    //productSvc.get().subscribe(
-    //   (res)=>this.products.push(res);
-    // )
     for (var i = 0; i < 5; i++) {
       this.vals.push(Math.ceil(Math.random()) * 10);
     }
