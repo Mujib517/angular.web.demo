@@ -6,6 +6,12 @@ import { HttpClient } from '@angular/common/http';
   template: `
     <h1>About Page</h1>
 
+    <mat-toolbar color="warn">
+      <button mat-button>Home</button>
+      <button mat-button>About</button>
+      <button mat-button>Contact</button>
+    </mat-toolbar>
+
     <div>
         <button mat-button color="accent">Click me</button>
         <button mat-raised-button color="warn">Click me</button>

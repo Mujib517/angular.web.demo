@@ -1,10 +1,11 @@
 import { NgModule } from "@angular/core";
 import {
     MatButtonModule, MatCheckboxModule, MatProgressSpinnerModule,
-    MatInputModule, MatSelectModule, MatRadioModule, MatSlideToggleModule
+    MatInputModule, MatSelectModule, MatRadioModule, MatSlideToggleModule,
+    MatToolbarModule
 } from '@angular/material';
 
-let modules = [MatProgressSpinnerModule, MatButtonModule, MatRadioModule, MatCheckboxModule, MatInputModule, MatSelectModule, MatSlideToggleModule];
+let modules = [MatToolbarModule, MatProgressSpinnerModule, MatButtonModule, MatRadioModule, MatCheckboxModule, MatInputModule, MatSelectModule, MatSlideToggleModule];
 
 @NgModule({
     imports: modules,
